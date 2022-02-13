@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module 74138(
+module 74138_a(
     // Select  Inputs
     input logic select_a_i,
     input logic select_b_i,
