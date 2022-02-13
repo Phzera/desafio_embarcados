@@ -7,7 +7,7 @@ The logic diagram is showed below:
 ![Logic diagram](docs/logic_diagram.PNG)
 
 ## Challenges
-1. Implement with logic operators
+1. Implement with logic operators: 74138_a
 1. Implement with process using IF
 1. Implement with process using CASE
 1. Implement with WHEN...ELSE
