@@ -10,6 +10,6 @@ The logic diagram is showed below:
 1. Implement with logic operators
 1. Implement with process using IF
 1. Implement with process using CASE
-1. Implement with WHEN…ELSE
-1. Implement with WITH…SELECT
+1. Implement with WHEN...ELSE
+1. Implement with WITH...SELECT
 1. Design testbench and simulate
