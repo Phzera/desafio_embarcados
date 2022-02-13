@@ -6,22 +6,26 @@ module 74138(
     input logic select_b_i,
     input logic select_c_i,
     // Enable Inputs
-    input logic g1_i,
-    input logic g2a_n_i, // Active-low
-    input logic g2b_n_i, // Active-low
+    input logic g1_en_i,    // Active-high
+    input logic g2a_en_n_i, // Active-low
+    input logic g2b_en_n_i, // Active-low
     // Data Outputs
     output logic [7:0] yn_o
 );
 
-// Internal signals
-logic g2_s;
-logic enable;
+logic enable_s;
 
-// G2 treatment: G2 = g2a_n_i + g2b_n_i
-assign g2_s = (~g2a_n_i or ~g2b_n_i);
+// Global Enable
+assign enable_s = ~g2a_en_n_i && ~~g2b_en_n_i && g1_en_i;
 
-// Enable
-assign enable = ~(~g1_i) && g2_s;
-
+// Combinatorial Outputs
+assign yn_o[0] = ~(~select_a_i && ~select_b_i  && ~select_c_i && enable_s);
+assign yn_o[1] = ~(select_a_i  && ~select_b_i  && ~select_c_i && enable_s);
+assign yn_o[2] = ~(~select_a_i &&  select_b_i  && ~select_c_i && enable_s);
+assign yn_o[3] = ~(select_a_i  && ~select_b_i  && ~select_c_i && enable_s);
+assign yn_o[4] = ~(~select_a_i && ~select_b_i  &&  select_c_i && enable_s);
+assign yn_o[5] = ~(select_a_i  && ~select_b_i  &&  select_b_i && enable_s);
+assign yn_o[6] = ~(~select_a_i &&  select_b_i  &&  select_b_i && enable_s);
+assign yn_o[7] = ~(select_a_i  &&  select_b_i  && select_b_i  && enable_s);
 
 endmodule
