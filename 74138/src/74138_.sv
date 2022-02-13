@@ -24,8 +24,8 @@ assign yn_o[1] = ~(select_a_i  && ~select_b_i  && ~select_c_i && enable_s);
 assign yn_o[2] = ~(~select_a_i &&  select_b_i  && ~select_c_i && enable_s);
 assign yn_o[3] = ~(select_a_i  && ~select_b_i  && ~select_c_i && enable_s);
 assign yn_o[4] = ~(~select_a_i && ~select_b_i  &&  select_c_i && enable_s);
-assign yn_o[5] = ~(select_a_i  && ~select_b_i  &&  select_b_i && enable_s);
-assign yn_o[6] = ~(~select_a_i &&  select_b_i  &&  select_b_i && enable_s);
-assign yn_o[7] = ~(select_a_i  &&  select_b_i  && select_b_i  && enable_s);
+assign yn_o[5] = ~(select_a_i  && ~select_b_i  &&  select_c_i && enable_s);
+assign yn_o[6] = ~(~select_a_i &&  select_b_i  &&  select_c_i && enable_s);
+assign yn_o[7] = ~(select_a_i  &&  select_b_i  &&  select_c_i && enable_s);
 
 endmodule

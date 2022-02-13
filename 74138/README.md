@@ -3,12 +3,13 @@ These circuits  are  designed  to  be  used in   high-performance   memory-decod
 The  DM74LS138  decodes  one-of-eight  lines,  based  upon the  conditions  at  the  three  binary  select  inputs  and  the three  enable  inputs.  Two  active-low  and  one  active-high enable inputs reduce the need for external gates or inverters  when  expanding. An enable input can be used as a data input for demultiplexing applications.
 
 The logic diagram is showed below:
+
 ![Logic diagram](docs/logic_diagram.PNG)
 
 ## Challenges
-1. Implementar operadores lógicos.
-1. Implementar com process usando IF
-1. Implementar com process usando CASE
-1. Implementar usando WHEN…ELSE
-1. Implementar usando WITH…SELECT
-1. Montar o testbench e simular.
+1. Implement with logic operators
+1. Implement with process using IF
+1. Implement with process using CASE
+1. Implement with WHEN…ELSE
+1. Implement with WITH…SELECT
+1. Design testbench and simulate
