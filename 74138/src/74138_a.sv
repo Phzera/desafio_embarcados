@@ -22,7 +22,7 @@ module 74138_a(
 logic enable_s;
 
 // Global Enable
-assign enable_s = ~g2a_en_n_i && ~~g2b_en_n_i && g1_en_i;
+assign enable_s = ~g2a_en_n_i && ~g2b_en_n_i && g1_en_i;
 
 // Combinatorial Outputs
 assign yn_o[0] = ~(~select_a_i && ~select_b_i  && ~select_c_i && enable_s);
