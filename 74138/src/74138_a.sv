@@ -1,5 +1,11 @@
 `timescale 1ns/1ps
-
+/*
+* 74138 using logic operators
+* Author: Pedro Oliveira
+* Version History
+* Version | Date        | Modifications
+* 1.0     | 2022/02/13  | Initial 
+*/
 module 74138_a(
     // Select  Inputs
     input logic select_a_i,
@@ -22,7 +28,7 @@ assign enable_s = ~g2a_en_n_i && ~~g2b_en_n_i && g1_en_i;
 assign yn_o[0] = ~(~select_a_i && ~select_b_i  && ~select_c_i && enable_s);
 assign yn_o[1] = ~(select_a_i  && ~select_b_i  && ~select_c_i && enable_s);
 assign yn_o[2] = ~(~select_a_i &&  select_b_i  && ~select_c_i && enable_s);
-assign yn_o[3] = ~(select_a_i  && ~select_b_i  && ~select_c_i && enable_s);
+assign yn_o[3] = ~(select_a_i  &&  select_b_i  && ~select_c_i && enable_s);
 assign yn_o[4] = ~(~select_a_i && ~select_b_i  &&  select_c_i && enable_s);
 assign yn_o[5] = ~(select_a_i  && ~select_b_i  &&  select_c_i && enable_s);
 assign yn_o[6] = ~(~select_a_i &&  select_b_i  &&  select_c_i && enable_s);
