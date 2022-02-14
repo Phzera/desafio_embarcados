@@ -73,6 +73,8 @@ module tb_74138_a();
         #10 tb_sel_a = 1'b1; tb_sel_b = 1'b0; tb_sel_c = 1'b1;
         #10 tb_sel_a = 1'b0; tb_sel_b = 1'b1; tb_sel_c = 1'b1;
         #10 tb_sel_a = 1'b1; tb_sel_b = 1'b1; tb_sel_c = 1'b1;
+
+        $finish;
     end
 
 endmodule
