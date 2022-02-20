@@ -6,10 +6,23 @@ The logic diagram is showed below:
 
 ![Logic diagram](docs/logic_diagram.PNG)
 
+## Truth Table
+G1 | G2*| C | B | A | Y0 | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7|
+:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+X  | 1  | X | X | X | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1 |
+0  | X  | X | X | X | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1 |
+1  | 0  | 0 | 0 | 0 | 0  | 1  | 1  | 1  | 1  | 1  | 1  | 1 |
+1  | 0  | 0 | 0 | 1 | 1  | 0  | 1  | 1  | 1  | 1  | 1  | 1 |
+1  | 0  | 0 | 1 | 0 | 1  | 1  | 0  | 1  | 1  | 1  | 1  | 1 |
+1  | 0  | 0 | 1 | 1 | 1  | 1  | 1  | 0  | 1  | 1  | 1  | 1 |
+1  | 0  | 1 | 0 | 0 | 1  | 1  | 1  | 1  | 0  | 1  | 1  | 1 |
+1  | 0  | 1 | 0 | 1 | 1  | 1  | 1  | 1  | 1  | 0  | 1  | 1 |
+1  | 0  | 1 | 1 | 0 | 1  | 1  | 1  | 1  | 1  | 1  | 0  | 1 |
+1  | 0  | 1 | 1 | 1 | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 0 |
 ## Challenges
 1. Implement with logic operators: 74138_a
-1. Implement with process using IF
-1. Implement with process using CASE
-1. Implement with WHEN...ELSE
-1. Implement with WITH...SELECT
+1. Implement with process using IF: 74138_b
+1. Implmement with process using CASE: 74138_c
+1. ~~Implement with WHEN...ELSE~~
+1. ~~Implement with WITH...SELECT~~
 1. Design testbench and simulate
