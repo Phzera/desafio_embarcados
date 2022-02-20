@@ -19,6 +19,8 @@ X  | 1  | X | X | X | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1 |
 1  | 0  | 1 | 0 | 1 | 1  | 1  | 1  | 1  | 1  | 0  | 1  | 1 |
 1  | 0  | 1 | 1 | 0 | 1  | 1  | 1  | 1  | 1  | 1  | 0  | 1 |
 1  | 0  | 1 | 1 | 1 | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 0 |
+
+(*) G2 = G2a + G2b
 ## Challenges
 1. Implement with logic operators: 74138_a
 1. Implement with process using IF: 74138_b
