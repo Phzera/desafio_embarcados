@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 /*
-* 74138 using logic operators Testbench
+* 74138 Testbench
 * Author: Pedro Oliveira
 * Version History
 * Version | Date        | Modifications
