@@ -34,7 +34,7 @@ always @(*) begin
     end
 end
 
-always @(select_a_i, select_b_i, select_c_i) begin
+always @(enable_s, select_a_i, select_b_i, select_c_i) begin
     if (enable_s) begin
         case(select_s)
             3'b000  : yn_o = 8'b01111111;
