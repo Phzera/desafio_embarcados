@@ -45,5 +45,41 @@ assign yn_o[6] = ~(~select_a_i &&  select_b_i  &&  select_c_i && enable_s);
 assign yn_o[7] = ~(select_a_i  &&  select_b_i  &&  select_c_i && enable_s);
 */
 
+always @(*) begin
+    if (enable_s) begin
+        if (select_c_i) begin
+            if (select_b_i) begin
+                if (select_a_i) begin
+                    yn_o[7] = 1'b0;
+                end else begin
+                    yn_0[6] = 1'b0;
+                end
+            end else begin
+                if (select_a_i) begin
+                    yn_o[5] = 1'b0;
+                end else begin
+                    yn_o[4] = 1'b0;
+                end
+            end
+        end else begin
+            if (selec_b_i) begin
+                if (select_a_i) begin
+                    yn_o[3] = 1'b0;
+                end else begin
+                    yn_o[2] = 1'b0;
+                end
+            end else begin
+                if (select_a_i) begin
+                    yn_o[1] = 1'b0;
+                end else begin
+                    yn_o[0] = 1'b0;
+                end
+            end
+        end
+    end else begin
+        yn_o = 8'b1;
+    end
+end
+
 
 endmodule
