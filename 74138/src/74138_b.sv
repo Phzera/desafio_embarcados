@@ -38,7 +38,7 @@ always @(*) begin
                 if (select_a_i) begin
                     yn_o[7] = 1'b0;
                 end else begin
-                    yn_0[6] = 1'b0;
+                    yn_o[6] = 1'b0;
                 end
             end else begin
                 if (select_a_i) begin
