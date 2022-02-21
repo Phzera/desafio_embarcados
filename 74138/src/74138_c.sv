@@ -6,7 +6,7 @@
 * Version | Date        | Modifications
 * 1.0     | 2022/02/13  | Initial 
 */
-module 74138_b(
+module 74138_c(
     // Select  Inputs
     input logic select_a_i,
     input logic select_b_i,
