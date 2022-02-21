@@ -24,7 +24,7 @@ X  | 1  | X | X | X | 1  | 1  | 1  | 1  | 1  | 1  | 1  | 1 |
 ## Challenges
 1. Implement with logic operators: 74138_a
 1. Implement with process using IF: 74138_b
-1. Implmement with process using CASE: 74138_c
+1. Implement with process using CASE: 74138_c
 1. ~~Implement with WHEN...ELSE~~
 1. ~~Implement with WITH...SELECT~~
 1. Design testbench and simulate

@@ -24,9 +24,12 @@ logic enable_s;
 // Global Enable
 always @(*) begin
     if(g1_en_i) begin
-        if (~g2a_en_n_i && ~g2b_en_n_i) enable_s = 1'b1;
-    end
-    else begin
+        if (~g2a_en_n_i && ~g2b_en_n_i) begin
+            enable_s = 1'b1;
+        end else begin
+            enable_s = 1'b0;
+        end
+    end else begin
         enable_s = 1'b0;
     end
 end
