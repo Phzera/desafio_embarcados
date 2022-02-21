@@ -4,7 +4,7 @@ The  DM74LS138  decodes  one-of-eight  lines,  based  upon the  conditions  at  
 
 The logic diagram is showed below:
 
-![Logic diagram](docs/logic_diagram.PNG)
+![Logic diagram](docs/diagram.PNG)
 
 ## Truth Table
 G1 | G2*| C | B | A | Y0 | Y1 | Y2 | Y3 | Y4 | Y5 | Y6 | Y7|
