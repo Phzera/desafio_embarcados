@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/100ps
 /*
 * 74138 using logic operators Testbench
 * Author: Pedro Oliveira
@@ -20,7 +20,7 @@ module tb_74138_a();
 // Output
     logic [7:0] tb_yn;    
 // Instantiates de DUT
-    74138_a DUT (
+    a_74138 DUT (
         .select_a_i (tb_sel_a),
         .select_b_i (tb_sel_b),
         .select_c_i (tb_sel_c),
@@ -47,11 +47,10 @@ module tb_74138_a();
         tb_sel_b  = 1'bX;
         tb_sel_c  = 1'bX;
         tb_g1_en  = 1'bX;
-        tb_g2a_en = 1'bX;
-        tb_g2b_en = 1'bX;
+        tb_g2a_en = 1'b1;
+        tb_g2b_en = 1'b1;
         
         // Hold G1 enable low 
-        #10 tb_g1_en = 1'bX; tb_g2a_en = 1'b0; tb_g2b_en = 1'b0;
         #10 tb_g1_en = 1'b0; tb_g2a_en = 1'b0; tb_g2b_en = 1'b0; 
         #10 tb_g1_en = 1'b0; tb_g2a_en = 1'b1; tb_g2b_en = 1'b0;        
         #10 tb_g1_en = 1'b0; tb_g2a_en = 1'b0; tb_g2b_en = 1'b1;
@@ -63,9 +62,11 @@ module tb_74138_a();
         #10 tb_g1_en = 1'b1; tb_g2a_en = 1'b0; tb_g2b_en = 1'b1; 
         #10 tb_g1_en = 1'b1; tb_g2a_en = 1'b1; tb_g2b_en = 1'b1;
         
-        // Hold Enables asserted - sweep select
-        #10 tb_g1_en = 1'b1; tb_g2a_en = 1'b0; tb_g2b_en = 1'b0; 
-            tb_sel_a = 1'b0; tb_sel_b = 1'b0; tb_sel_c = 1'b0;
+        // Hold Enables asserted 
+        #10 tb_g1_en = 1'b1; tb_g2a_en = 1'b0; tb_g2b_en = 1'b0;
+ 
+        // Sweep select    
+        tb_sel_a = 1'b0; tb_sel_b = 1'b0; tb_sel_c = 1'b0;
         #10 tb_sel_a = 1'b1; tb_sel_b = 1'b0; tb_sel_c = 1'b0;     
         #10 tb_sel_a = 1'b0; tb_sel_b = 1'b1; tb_sel_c = 1'b0;
         #10 tb_sel_a = 1'b1; tb_sel_b = 1'b1; tb_sel_c = 1'b0;
@@ -73,7 +74,10 @@ module tb_74138_a();
         #10 tb_sel_a = 1'b1; tb_sel_b = 1'b0; tb_sel_c = 1'b1;
         #10 tb_sel_a = 1'b0; tb_sel_b = 1'b1; tb_sel_c = 1'b1;
         #10 tb_sel_a = 1'b1; tb_sel_b = 1'b1; tb_sel_c = 1'b1;
-
+        #10 tb_sel_a = 1'b0; tb_sel_b = 1'b0; tb_sel_c = 1'b0;
+        #10 tb_g1_en = 1'b0;
+        #10
+        // Terminates Simulation
         $finish;
     end
 

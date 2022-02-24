@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/100ps
 /*
 * 74138 using logic operators
 * Author: Pedro Oliveira
@@ -6,7 +6,7 @@
 * Version | Date        | Modifications
 * 1.0     | 2022/02/13  | Initial 
 */
-module 74138_a(
+module a_74138(
     // Select  Inputs
     input logic select_a_i,
     input logic select_b_i,
