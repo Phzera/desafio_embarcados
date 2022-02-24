@@ -37,28 +37,28 @@ end
 always @(*) begin
     if (enable_s) begin
         if (select_c_i && select_b_i && select_a_i) begin
-            yn_o = 8'b1111_1110;
+            yn_o = 8'b01111111;
         end
         else if (select_c_i && select_b_i && ~select_a_i) begin
-            yn_o = 8'b1111_1101;
+            yn_o = 8'b10111111;
         end
         else if (select_c_i && ~select_b_i && select_a_i) begin
-            yn_o = 8'b1111_1011;
-        end
-        else if (~select_c_i && ~select_b_i && ~select_a_i) begin
-            yn_o = 8'b1111_0111;
-        end
-        else if (~select_c_i && select_b_i && select_a_i) begin
-            yn_o = 8'b11101111;
-        end
-        else if (~select_c_i && select_b_i && ~select_a_i) begin
             yn_o = 8'b11011111;
         end
+        else if (select_c_i && ~select_b_i && ~select_a_i) begin
+            yn_o = 8'b11101111;
+        end
+        else if (~select_c_i && select_b_i && select_a_i) begin
+            yn_o = 8'b11110111;
+        end
+        else if (~select_c_i && select_b_i && ~select_a_i) begin
+            yn_o = 8'b11111011;
+        end
         else if (~select_c_i && ~select_b_i && select_a_i) begin
-            yn_o = 8'b10111111;
+            yn_o = 8'b11111101;
         end 
         else if  (~select_c_i && ~select_b_i && ~select_a_i) begin
-            yn_o = 8'b01111111;
+            yn_o = 8'b11111110;
         end else 
             yn_o = 8'b1;
         end
