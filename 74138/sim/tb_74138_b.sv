@@ -38,7 +38,7 @@ module tb_74138_b();
 
         $display ("[%0t] << Starting simulation >> ", $time);
         // Monitor Inputs
-        $monitor("[%0t] Select A = %b, Select B = %b, Select C = %c", $time, tb_sel_a, tb_sel_b, tb_sel_c);
+        $monitor("[%0t] Select A = %b, Select B = %b, Select C = %b", $time, tb_sel_a, tb_sel_b, tb_sel_c);
         $monitor("[%0t] Enable G1= %b, Enable G2A = %b, Enable G2B = %b", $time, tb_g1_en, tb_g2a_en, tb_g2b_en);
         // Monitor Outputs
         $monitor("[%0t] Output Y = %b", $time, tb_yn);

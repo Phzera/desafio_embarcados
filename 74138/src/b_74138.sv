@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+`timescale 1ns/100ps
 /*
 * 74138 using always @ () IF
 * Author: Pedro Oliveira
@@ -22,7 +22,7 @@ module b_74138(
 logic enable_s;
 
 // Global Enable
-always @(*) begin
+always @(g1_en_i, g2a_en_n_i, g2b_en_n_i) begin
     if(g1_en_i) begin
         if (~g2a_en_n_i && ~g2b_en_n_i) begin
             enable_s = 1'b1;
@@ -36,39 +36,31 @@ end
 
 always @(*) begin
     if (enable_s) begin
-        if (select_c_i) begin
-            if (select_b_i) begin
-                if (select_a_i) begin
-                    yn_o[7] = 1'b0;
-                end else begin
-                    yn_o[6] = 1'b0;
-                end
-            end else begin
-                if (select_a_i) begin
-                    yn_o[5] = 1'b0;
-                end else begin
-                    yn_o[4] = 1'b0;
-                end
-            end
-        end else begin
-            if (select_b_i) begin
-                if (select_a_i) begin
-                    yn_o[3] = 1'b0;
-                end else begin
-                    yn_o[2] = 1'b0;
-                end
-            end else begin
-                if (select_a_i) begin
-                    yn_o[1] = 1'b0;
-                end else begin
-                    yn_o[0] = 1'b0;
-                end
-            end
+        if (select_c_i && select_b_i && select_a_i) begin
+            yn_o = 8'b1111_1110;
         end
-    end else begin
-        yn_o = 8'b1;
+        else if (select_c_i && select_b_i && ~select_a_i) begin
+            yn_o = 8'b1111_1101;
+        end
+        else if (select_c_i && ~select_b_i && select_a_i) begin
+            yn_o = 8'b1111_1011;
+        end
+        else if (~select_c_i && ~select_b_i && ~select_a_i) begin
+            yn_o = 8'b1111_0111;
+        end
+        else if (~select_c_i && select_b_i && select_a_i) begin
+            yn_o = 8'b11101111;
+        end
+        else if (~select_c_i && select_b_i && ~select_a_i) begin
+            yn_o = 8'b11011111;
+        end
+        else if (~select_c_i && ~select_b_i && select_a_i) begin
+            yn_o = 8'b10111111;
+        end 
+        else if  (~select_c_i && ~select_b_i && ~select_a_i) begin
+            yn_o = 8'b01111111;
+        end else 
+            yn_o = 8'b1;
+        end
     end
-end
-
-
 endmodule
