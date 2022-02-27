@@ -34,17 +34,17 @@ always @(*) begin
     end
 end
 
-always @(enable_s, select_a_i, select_b_i, select_c_i) begin
+always @(enable_s, select_s) begin
     if (enable_s) begin
         case(select_s)
-            3'b000  : yn_o = 8'b01111111;
-            3'b001  : yn_o = 8'b10111111;
-            3'b010  : yn_o = 8'b11011111;
-            3'b011  : yn_o = 8'b11101111;
-            3'b100  : yn_o = 8'b11110111;
-            3'b101  : yn_o = 8'b11111011;
-            3'b110  : yn_o = 8'b11111101;
-            3'b111  : yn_o = 8'b11111110;
+            3'b000  : yn_o = 8'b11111110;
+            3'b001  : yn_o = 8'b11111101;
+            3'b010  : yn_o = 8'b11111011;
+            3'b011  : yn_o = 8'b11110111;
+            3'b100  : yn_o = 8'b11101111;
+            3'b101  : yn_o = 8'b11011111;
+            3'b110  : yn_o = 8'b10111111;
+            3'b111  : yn_o = 8'b01111111;
             default : yn_o = 8'b1; 
         endcase
     end else begin

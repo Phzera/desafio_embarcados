@@ -1,6 +1,6 @@
 `timescale 1ns/100ps
 /*
-* 74138 using logic operators Testbench
+* 74138 using IF Testbench
 * Author: Pedro Oliveira
 * Version History
 * Version | Date        | Modifications
