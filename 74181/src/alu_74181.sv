@@ -65,6 +65,8 @@ always @(*) begin
     end
 end
 
+// A = B -> AND between F outputs
+assign equality_o = &F_o;
 
 
 endmodule
