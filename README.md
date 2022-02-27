@@ -1,4 +1,4 @@
-# Desafio Embarcados
+# (PT-BR) Desafio Embarcados
 Este repositório foi criado com fins educativos para o desenvolvimento de projetos propostos em:
 ["Projetos para começar com HDL"](https://www.embarcados.com.br/projetos-para-comecar-com-hdl/) escritos por R.F. Tafas no Portal Embarcados.
 A ideia é tentar executá-los sequencialmente para exercitar o HDL (será utilizado SystemVerilog) do básico ao intermediário, desenvolvendo se possível todas as propostas para cada exercício.
