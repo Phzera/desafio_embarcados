@@ -2,23 +2,23 @@
 * 74181 4-bit logic/arithmetic ALU
 * Author: Pedro Oliveira
 * Date: 2022, Feb 27
-*
+* Active-High Inputs/Outputs
 *
 */
 `timescale 1ns/100ps
 
 
 module alu_74181(
-    input  logic [3:0]  S_selection_i,
-    input  logic        mode_control_i,
-    input  logic        carry_in_i,
-    input  logic [3:0]  A_i,        // Active-high data inputs
-    input  logic [3:0]  B_i,        // Active-high data inputs
-    output logic        equality_o,   // A = B
-    output signed [3:0] F_o,         // Number output
-    output logic        carry_plus_four_o,
-    output logic        G_lookahead_o,
-    output logic        P_lookahead_o;
+    input  logic [3:0]  S_selection_i,     // Operator selector
+    input  logic        mode_control_i,    // M mode control input
+    input  logic        carry_in_i,        // Carry In
+    input  logic [3:0]  A_i,               // Active-high data inputs
+    input  logic [3:0]  B_i,               // Active-high data inputs
+    output logic        equality_o,        // A = B
+    output signed [3:0] F_o,               // Number output
+    output logic        carry_output_o,    // Carry in + 4
+    output logic        generated_carry_o, // G and P are not affected by carry in
+    output logic        propagated_carry_o;
 );
 
 always @(*) begin
@@ -47,7 +47,7 @@ always @(*) begin
             4'b0000: F_o = carry_in_i ? (A_i + 4'b1) : A_i;
             4'b0001: F_o = carry_in_i ? ((A_i | B_i) + 4'b1) : (A_i | B_i);
             4'b0010: F_o = carry_in_i ? ((A_i | ~B_i) + 4'b1) : (A_i | ~B_i);
-            4'b0011: F_o = carry_in_i ? 4'b0 : 4'sb1001;
+            4'b0011: F_o = carry_in_i ? 4'b0 : 4'sb1001; // Signed output
             4'b0100: F_o = carry_in_i ? (A_i + (A_i & ~B_i) + 4'b1) : (A_i + (A_i & B_i));
             4'b0101: F_o = carry_in_i ? ((A_i | B_i) + (A_i & ~B_i) + 4'b1) : ((A_i | B_i) + (A_i & ~B_i));
             4'b0110: F_o = carry_in_i ? (A_i - B_i) : (A_i - B_i - 4'b1);
@@ -68,5 +68,10 @@ end
 // A = B -> AND between F outputs
 assign equality_o = &F_o;
 
+// G lookahead
+
+// P lookahead
+
+// Cn+4 
 
 endmodule
