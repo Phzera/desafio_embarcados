@@ -15,7 +15,7 @@ always_ff @(posedge clk_i or negedge resetn_i) begin
         q_o <= 0;
     end
     else begin
-        q_o <= d;
+        q_o <= d_i;
     end
 end
 
